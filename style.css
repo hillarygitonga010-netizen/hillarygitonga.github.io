@@ -1,1 +1,165 @@
+/* -----------------------------
+  GLOBAL STYLES
+------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #f0f2f5;
+  color: #1c1c1c;
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* -----------------------------
+  HEADER
+------------------------------ */
+header {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.5em;
+  color: #0d47a1; /* Deep tech blue */
+}
+
+header p {
+  font-size: 1.2em;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* -----------------------------
+  SECTION STYLING
+------------------------------ */
+.section {
+  background: #ffffff;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* -----------------------------
+  HEADINGS
+------------------------------ */
+h2 {
+  color: #0d47a1;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  border-bottom: 2px solid #0d47a1;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+h3 {
+  color: #222;
+  font-size: 1.3em;
+  margin-bottom: 8px;
+}
+
+/* -----------------------------
+  PROJECTS
+------------------------------ */
+.project {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-left: 4px solid #0d47a1; /* accent line */
+  transition: background 0.3s ease;
+}
+
+.project:hover {
+  background: #e3f2fd; /* subtle tech highlight */
+}
+
+.project p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.project a {
+  text-decoration: none;
+  color: #1976d2;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.project a:hover {
+  color: #0d47a1;
+}
+
+/* -----------------------------
+  CONTACT
+------------------------------ */
+.contact p {
+  margin-bottom: 10px;
+}
+
+.contact a {
+  color: #1976d2;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  color: #0d47a1;
+}
+
+/* -----------------------------
+  LINKS AND BUTTON EFFECTS
+------------------------------ */
+a.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #0d47a1;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+a.button:hover {
+  background: #1976d2;
+  transform: translateY(-2px);
+}
+
+/* -----------------------------
+  FOOTER / OPTIONAL
+------------------------------ */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* -----------------------------
+  RESPONSIVE
+------------------------------ */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+}
