@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects | Hillary Gitonga</title>
+  <title>Projects | Dynamic Add</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <nav class="navbar">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -18,69 +17,70 @@
     </ul>
   </nav>
 
-  <!-- PROJECTS SECTION -->
   <section id="projects" class="section">
     <h2>Projects</h2>
-    <div class="projects-container">
 
-      <!-- Academic AI App -->
+    <!-- Projects container -->
+    <div class="projects-container" id="projects-container">
+      <!-- Existing project example -->
       <div class="project">
         <h3>Academic AI App</h3>
         <p class="project-date">Completed: 2026</p>
         <p class="project-description">
-          Academic AI is a smart platform that automates report generation, paraphrasing, and exam prediction for students, helping improve learning efficiency and save time.
+          Academic AI automates report generation, paraphrasing, and exam prediction for students.
         </p>
-        <p>
-          <a href="https://merubiochemlabreports.netlify.app" target="_blank" rel="noopener noreferrer">
-            Visit Live Academic AI App
-          </a>
-        </p>
+        <p><a href="https://merubiochemlabreports.netlify.app" target="_blank" rel="noopener noreferrer">Visit Live Academic AI App</a></p>
       </div>
-
-      <!-- ElectroFix Hub -->
-      <div class="project">
-        <h3>ElectroFix Hub</h3>
-        <p class="project-date">Completed: 2026</p>
-        <p class="project-description">
-          ElectroFix Hub is an online platform showcasing tech products and repair services, providing a clean and intuitive user interface for easy navigation.
-        </p>
-        <p>
-          <a href="https://opfhpi-my-site-msis21q2-hillarygitonga010.wix-vibe.com/" target="_blank" rel="noopener noreferrer">
-            Visit Live ElectroFix Hub
-          </a>
-        </p>
-      </div>
-
-      <!-- Business Website -->
-      <div class="project">
-        <h3>Business Website</h3>
-        <p class="project-date">Completed: 2026</p>
-        <p class="project-description">
-          A responsive website created for a local business to improve online presence and engage with customers effectively.
-        </p>
-        <p>
-          <a href="https://your-business-live-link.com" target="_blank" rel="noopener noreferrer">
-            Visit Live Business Website
-          </a>
-        </p>
-      </div>
-
-      <!-- Client Dashboard -->
-      <div class="project">
-        <h3>Client Dashboard</h3>
-        <p class="project-date">Completed: 2026</p>
-        <p class="project-description">
-          Secure client dashboard for tracking project progress and accessing deliverables with intuitive navigation and clean UI.
-        </p>
-        <p>
-          <a href="https://your-dashboard-live-link.com" target="_blank" rel="noopener noreferrer">
-            Visit Live Client Dashboard
-          </a>
-        </p>
-      </div>
-
     </div>
+
+    <hr>
+
+    <!-- Add new project form -->
+    <div id="add-project-form" style="margin-top:30px;">
+      <h3>Add New Project</h3>
+      <label>Project Name: <input type="text" id="proj-name"></label><br><br>
+      <label>Date Completed: <input type="text" id="proj-date"></label><br><br>
+      <label>Description:<br>
+        <textarea id="proj-desc" rows="4" cols="50"></textarea>
+      </label><br><br>
+      <label>Live Project Link: <input type="text" id="proj-link"></label><br><br>
+      <button onclick="addProject()">Add Project</button>
+    </div>
+
   </section>
+
+  <script>
+    function addProject() {
+      const name = document.getElementById('proj-name').value;
+      const date = document.getElementById('proj-date').value;
+      const desc = document.getElementById('proj-desc').value;
+      const link = document.getElementById('proj-link').value;
+
+      if (!name || !date || !desc || !link) {
+        alert("Please fill all fields!");
+        return;
+      }
+
+      const container = document.getElementById('projects-container');
+
+      const projectDiv = document.createElement('div');
+      projectDiv.className = 'project';
+      projectDiv.innerHTML = `
+        <h3>${name}</h3>
+        <p class="project-date">Completed: ${date}</p>
+        <p class="project-description">${desc}</p>
+        <p><a href="${link}" target="_blank" rel="noopener noreferrer">Visit Live Project</a></p>
+      `;
+
+      container.appendChild(projectDiv);
+
+      // Clear form fields
+      document.getElementById('proj-name').value = '';
+      document.getElementById('proj-date').value = '';
+      document.getElementById('proj-desc').value = '';
+      document.getElementById('proj-link').value = '';
+    }
+  </script>
 
 </body>
 </html>
