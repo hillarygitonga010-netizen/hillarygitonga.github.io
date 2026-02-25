@@ -1,6 +1,6 @@
-/* -----------------------------
-  GLOBAL STYLES
------------------------------- */
+/* =======================
+   GLOBAL STYLING
+======================= */
 * {
   margin: 0;
   padding: 0;
@@ -10,160 +10,151 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  background: #f0f2f5;
+  background: linear-gradient(135deg, #f0f2f5, #e3f2fd);
   color: #1c1c1c;
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px;
+  scroll-behavior: smooth;
 }
 
-/* -----------------------------
-  HEADER
------------------------------- */
-header {
-  text-align: center;
-  padding-bottom: 40px;
+/* =======================
+   NAVIGATION BAR
+======================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #0d47a1;
+  color: #fff;
+  padding: 15px 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
 }
 
-header h1 {
-  font-size: 2.5em;
-  color: #0d47a1; /* Deep tech blue */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end; /* right-to-left feel */
+  gap: 25px;
 }
 
-header p {
-  font-size: 1.2em;
-  color: #555;
-  margin-top: 10px;
-}
-
-/* -----------------------------
-  SECTION STYLING
------------------------------- */
-.section {
-  background: #ffffff;
-  padding: 25px;
-  margin-bottom: 25px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.section:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-/* -----------------------------
-  HEADINGS
------------------------------- */
-h2 {
-  color: #0d47a1;
-  margin-bottom: 20px;
-  font-size: 1.8em;
-  border-bottom: 2px solid #0d47a1;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
-h3 {
-  color: #222;
-  font-size: 1.3em;
-  margin-bottom: 8px;
-}
-
-/* -----------------------------
-  PROJECTS
------------------------------- */
-.project {
-  margin-bottom: 20px;
-  padding: 15px;
-  border-left: 4px solid #0d47a1; /* accent line */
-  transition: background 0.3s ease;
-}
-
-.project:hover {
-  background: #e3f2fd; /* subtle tech highlight */
-}
-
-.project p {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-.project a {
+.navbar a {
   text-decoration: none;
-  color: #1976d2;
+  color: #fff;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
-.project a:hover {
+.navbar a:hover,
+.navbar a.active {
+  color: #ffca28;
+}
+
+/* Add space for fixed navbar */
+section {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+/* =======================
+   HEADINGS
+======================= */
+h1, h2, h3 {
+  font-weight: 700;
   color: #0d47a1;
+  margin-bottom: 15px;
 }
 
-/* -----------------------------
-  CONTACT
------------------------------- */
-.contact p {
-  margin-bottom: 10px;
-}
-
-.contact a {
-  color: #1976d2;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.contact a:hover {
-  color: #0d47a1;
-}
-
-/* -----------------------------
-  LINKS AND BUTTON EFFECTS
------------------------------- */
-a.button {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #0d47a1;
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-a.button:hover {
-  background: #1976d2;
-  transform: translateY(-2px);
-}
-
-/* -----------------------------
-  FOOTER / OPTIONAL
------------------------------- */
-footer {
+h1 {
+  font-size: 3em;
   text-align: center;
-  margin-top: 40px;
-  font-size: 0.9em;
-  color: #777;
+  margin-bottom: 20px;
 }
 
-/* -----------------------------
-  RESPONSIVE
------------------------------- */
-@media (max-width: 600px) {
-  body {
-    padding: 20px 10px;
-  }
-
-  header h1 {
-    font-size: 2em;
-  }
-
-  h2 {
-    font-size: 1.5em;
-  }
+h2 {
+  font-size: 2em;
+  border-bottom: 3px solid #0d47a1;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 25px;
 }
-/* Project dates and descriptions */
+
+h3 {
+  font-size: 1.4em;
+}
+
+/* =======================
+   SECTIONS
+======================= */
+#home {
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px 80px 20px;
+}
+
+#home .tagline {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+#about {
+  background: #ffffff;
+  padding: 60px 20px;
+  border-radius: 15px;
+  margin: 30px auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+#contact {
+  background: #e8f5e9;
+  padding: 60px 20px;
+  border-radius: 15px;
+  margin: 30px auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* =======================
+   PROJECTS SECTION
+======================= */
+#projects {
+  background: #f9fbe7;
+  padding: 60px 20px;
+  border-radius: 15px;
+  margin: 30px auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.project {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.project img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
 .project-date {
   font-size: 0.9em;
   color: #555;
@@ -176,28 +167,6 @@ footer {
   margin-bottom: 10px;
 }
 
-/* Grid layout for multiple projects */
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-}
-
-/* Project image hover effect */
-.project img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* Links styling */
 .project a {
   text-decoration: none;
   color: #1976d2;
@@ -206,4 +175,56 @@ footer {
 
 .project a:hover {
   color: #0d47a1;
+}
+
+/* =======================
+   CONTACT LINKS
+======================= */
+#contact p a {
+  color: #0d47a1;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#contact p a:hover {
+  color: #1976d2;
+}
+
+/* =======================
+   LISTS & GENERAL TEXT
+======================= */
+ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 15px;
+  font-size: 1em;
+}
+
+/* =======================
+   FOOTER
+======================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0d47a1;
+  color: #fff;
+  margin-top: 50px;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 768px) {
+  h1 { font-size: 2.2em; }
+  h2 { font-size: 1.6em; }
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+  .navbar ul {
+    justify-content: center;
+    gap: 15px;
+  }
 }
